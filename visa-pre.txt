@@ -1,0 +1,129 @@
+4000,AT&T Universal Card
+4013,Bank of Baltimore 
+4019,Bank of America 
+4024,Bank of America 
+4027,Rockwell Federal Credit Union 
+4032,Household Bank 
+4052,First Cincinatti 
+4060,Associates National Bank
+4060,Navy Federal Credit Union
+4066,NetBank
+4070,Security Pacific
+4071,Colonial National Bank
+4080,North County Bank
+4081,Desert Schools Federal Credit Union
+4085,Bank Of America
+4090,American Savings and Loan
+4094,A.M.C. Federal Credit Union 
+4094,Co-op Services Credit Union 
+4113,Valley National Bank 
+4114,Chemical Bank 
+4121,Atlantic Financial or USAA Federal
+4212,Alaska Federal Bank
+4215,Marine Midland
+4122,Union Trust 
+4225,Chase Manhattan Bank 
+4128,Citibank 
+4131,State Street Bank
+4215,Marine Midland Bank
+4225,Chase Manhattan Bank 
+4226,Chase Manhattan Bank 
+4231,Chase Lincoln First Classic
+4232,Chase Lincoln First Classic 
+4233,American Savings and Loan
+4239,Corestates Bank
+4241,National Westminester Bank 
+4250,First Chicago Bank 
+4253,Consumers Edge 
+4254,Security First Bank
+4262,Great Western
+4264,Maryland Bank NA (MBNA) 
+4271,Citibank
+4301,Monogram Bank 
+4302,H.H.B.C. 
+4303,H.H.B.C. 
+4305,Chase Manhattan Bank
+4310,Citibank or Imperial Savings
+4311,First National Bank of Louisville 
+4312,Barnett Bank 
+4313,Maryland Bank NA (MBNA) 
+4316,Leader Federal
+4317,Bank Of Omaha
+4327,First Atlanta 
+4332,Bank One
+4339,Primerica Bank 
+4342,N.C.M.B./Nations Bank 
+4356,National Bank of Delaware 
+4361,First Citizens' Federal Credit Union
+4368,National West 
+4369,West Side Auto Union
+4384,Bank One
+4387,Bank One
+4388,First Signature Bank & Trust 
+4388,Texas Independant Bank 
+4401,Gary-Wheaton Bank 
+4408,Sumitomo Bank
+4411,California First Interstate
+4413,First Bank Lincoln 
+4417,First USA Bank, N.A.
+4418,Bank of Omaha 
+4421,Indiana National Bank 
+4428,Bank Of Hoven
+4429,Western Savings Arizona
+4431,Mission Federal Credit Union
+4436,Security Bank and Trust 
+4443,Merrill Lynch Bank
+4444,FootHill Independent
+4447,AmeriTrust 
+4452,Empire Affiliates Federal Credit Union
+4475,Security Pacific
+4498,Republic Savings 
+4500,Citibank
+4502,C.I.B.C. 
+4503,Canadian Imperial Bank 
+4506,Belgium A.S.L.K. 
+4510,Royal Bank of Canada (RBC)
+4519,Royal Bank of Canada (RBC)
+4520,Toronto Dominion of Canada
+4534,DC Card
+4535,ScotiaBank
+4537,Bank of Nova Scotia
+4538,Bank of Nova Scotia
+4539,Barclays
+4543,Citibank
+4544,T.S.B. Bank
+4556,Citibank
+4564,Bank of Queensland
+4568,Berliner Bank
+4577,G.M.A.C. Federal Credit union
+4606,SouthTrust Bank
+4631,Compass Bank
+4654,L.A. Federal Credit Union
+4673,First Card
+4707,Tompkins County Trust
+4719,Rocky Mountain
+4721,First Security
+4722,West Bank
+4726,Wells Fargo
+4735,TRW Systems Federal Credit Union
+4773,E-Trade
+4783,AT&T's Universal Card
+4784,AT&T's Universal Card
+4791,Downingtown National Bank
+4800,Maryland Bank NA (MBNA)
+4811,Bank of Hawaii
+4819,Macom Federal Credit Union
+4820,IBM Mid America Federal Credit Union
+4833,U.S. Bank
+4841,GE Capitol
+4842,Security Pacific Washington
+4880,GE Capitol
+4897,Village Bank of Cincinatti
+4903,Citibank
+4906,Barclay Card
+4911,Citizen's Bank
+4916,Maryland Bank NA (MBNA)
+4917,Citibank
+4920,Citibank
+4921,Hong Kong National Bank
+4940,Postabank

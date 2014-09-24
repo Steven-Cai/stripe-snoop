@@ -1,0 +1,142 @@
+Stripe Snoop Change Log
+http://stripesnoop.sourceforge.net
+
+1.6 Alpha!!!
+
+   - Mac OS X, BSD, and non 86 platform support added: Acidus
+   - Code auto-detects compiling platform, and will added
+     appropriate code for hardware interfaces (ie #defines
+     no longer used): Acidus
+   - Code has been divided into more source files, to better
+     match concept abstractions, aid maintenance.: Acidus
+   - Sound Blaster Live! under Linux, Windows now working.: Acidus
+   - Track 1 Decoding functions added. : Acidus
+   - 8/23/04: Alpha Decoding and more flexible BCD decoding : Mentat
+   - 8/23/04: Variable bitstream sizes depending on track w/ possible command line override "-B" : Mentat
+   - 8/23/04: Specification of track in command line (just sets smart defaults) "-1 -2 -3" : Mentat
+   - 8/24/04: Specification of port on command line instead of #define "-P" : Mentat
+   - 8/24/04: Beginning of looping implementation "-l" : Mentat
+
+   Cards Added
+	Old California Drivers License : Mentat
+	Mastercard w/ basic database : Mentat
+	Discover Card : Mentat
+   
+Version 1.5 (8-8-2004)
+
+   - Force parse (-F) will now parse characters that don't pass parity: Acidus
+   - Added formatting function to make Account numbers follow : Acidus
+     format on the card. : Acidus
+   - Streamlined the database lookup process : Acidus
+   - Added Card Notes to database entries : Acidus
+   - Filled in all the missing comments and prototypes in source code : Acidus
+   - Formatted tabs to line up when printing report : Acidus
+   - Added entry of unknowns about each card type, to get people : Acidus
+     to submit data and help out : Acidus
+
+   Cards Added 
+
+     American Express Blue Card : Acidus
+     Barnes & Noble Reader's Advantage Card : Acidus
+     British Petroleum (BP) Gasoline Card : Acidus
+     Delta Crown Room Club Card : Acidus
+     Home Depot Consumer Credit Card : Acidus
+     Neiman Marcus Charge Card : Acidus
+     Radisson Gold Rewards Card : Acidus
+     COSTCO Business Membership Card : Acidus
+     US Air Frequent Traveler Card : Acidus
+     Walden Books Reader Card : Acidus
+     AAMVA Compliant North American Driver's License : Acidus
+
+Version 1.4 (8-6-2004)
+
+   - Added Force parse (-F) which tries to parse a bit stream as
+     long as it has at least a start character : Acidus
+   - Limited Cherry Keyboard (and other readers that connect
+     through the keyboard) support added. Works best with cards
+     containing only 1 track. : Acidus
+   - Added more Issuing Bank names for Visa : Acidus
+   - Code simplification: Lookup tables, single line ifs with ?'s : Acidus
+   - bitgen ignores ";" and "?" : Acidus
+   - Track 1 and Track 2 Support with Cherry Keyboards, though only
+     Track 2 will be parsed. : Acidus
+   - mod10 will generate Luhn compliant account numbers of any
+     length : Acidus
+
+   Cards Added
+
+     American Express Credit Card : Acidus
+     Barnes & Noble Gift Card : Acidus
+     Generic ATM Cards : Acidus
+     Georgia Institute of Technology Parking or Temporary Card : Acidus
+
+Version 1.3 (7-17-2004)
+
+   - Added Raw mode (-r) to display the raw binary of a track. : Acidus
+   - Now parsing command line options with getopt-like code. : Acidus
+   - Windows directory added with Project and Workspace files
+     to make Windows development easier. : Acidus
+   - Makefile added to make Linux/DOS development easier. : Acidus
+   - Hardware plans and documents have been added to a directory
+     called "hardware" : Acidus
+   - Added Input mode (-i) where a bit stream of 1's and 0's from
+     stdin is passed through the parsing engine. Allows for card
+     research to be done without a card reader! : Acidus
+   - Issuing Bank Names are reported based on CC Prefix. : Acidus
+   - bitgen, a command line tool to generate valid Track 2 
+     bit streams was added. Used with Input mode to allow
+     meaningful functionality to users without reader hardware. : Acidus
+   - DOS support has been dropped (briefly) while I find a better
+     compiler than Turbo C++ 1.01 to use. Getting the STL to work
+     in this older compilers really sucks! It will return. : Acidus
+   - mod10 tool has been added. Will validate credit card numbers
+     using the Luhn algorithm, and will generate valid numbers
+     from a prefix. Used with bitgen to create valid bitstreams
+     for Stripe Snoop users without hardware readers. : Acidus
+
+   Cards Added
+
+     Georgia Institute of Technology Buzzcard (Insecure) : Acidus
+     Georgia Institute of Technology Buzzcard (Secure) : Acidus
+     American Automobile Association Membership Card : Acidus
+     Kroger Plus Card : Acidus
+
+Version 1.2 (7-13-2004)
+
+   - Added support for Linux and Unix-like systems! Must be run
+     as root however, because of direct I/O requirements. : Acidus
+   - Create track-generic parser, to extract fields from a
+     decoded track, given a set of field delimiters. : Acidus
+   - Luhn algorithm (AKA MOD10) implemented to detect proper
+     credit card/debit card account numbers. : Acidus
+   - Can detect Visa credit cards, displays account number,
+     expiration date, and encrypted pin. : Acidus
+
+Version 1.1 (7-2-2004)
+
+   - Added support to compile as a DOS 16 bit application. : Acidus
+   - Windows 9x, ME builds no longer depend on Inpout32.dll. : Acidus
+   - Made syntax compatible for older C compilers, specifically
+     Borland Turbo C 2.01. This might have been a bad idea! : Acidus
+   - Timing loops no longer an issue! Ran fine on a 486DX2-66. : Acidus
+   - Added comments, should be easier for others to hack on. : Acidus
+ 
+   Bug Fixes
+  
+   - Memory leak when reversing bit stream fixed : Acidus
+
+version 1.0 (6/26/2004)
+
+   - Complete rewrite in C. Much more stable than 0.5. : Acidus
+   - Command line interface. : Acidus
+   - Implements LRC algorithm to detect bad cards. : Acidus
+   - Auto-detects cards swiped backwards, reverses the
+     bit stream and attempts decode again. : Acidus
+   - Debugging information sent to stdout with "-v". : Acidus
+
+version 0.5 (4/16/2004)
+
+   - Written in Visual Basic 6.0. : Acidus
+   - Pretty Gui. : Acidus
+   - Dependent on Inpout32.dll for all I/O calls. : Acidus
+   - Debugging info can be dumped to a file. : Acidus
