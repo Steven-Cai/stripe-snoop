@@ -15,6 +15,8 @@ typedef struct {
 	bool TRACK2;
 	bool TRACK3;
 	int BITSTREAMSIZE;
+	int BITPERCHAR;
+	int MAXCHAR;
 	int PORT;
 	bool LOOP;
 } ss_flags_t;

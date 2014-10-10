@@ -3,6 +3,9 @@
 
 #include "main.h"
 #include <vector>
+#include <stdlib.h>
+#include <stdio.h>
+
 /*
  * class track2
  *
@@ -208,7 +211,7 @@ char * goForceBCD(Bytef * bitstream);
 char * goForceAlpha(Bytef * bitstream);
 
 /*
- * char * decodeBCD(char *bitstream, int start,int end)
+ * char * decode(char *bitstream, int start,int end)
  *
  * decodes a bitstrean containing the BCD character set;
  *
@@ -217,30 +220,7 @@ char * goForceAlpha(Bytef * bitstream);
  * end - location of end character
  * return - character string of encoded data
  */
-char * decodeBCD(Bytef *bitstream, int start,int end);
-
-/*
- * char * decodeAlpha(char *bitstream, int start,int end)
- *
- * decodes a bitstrean containing the Alpha character set;
- *
- * bistream - String with bitstream to decode
- * start - location of start character
- * end - location of end character
- * return - character string of encoded data
- */
-char * decodeAlpha(Bytef *bitstream, int start,int end);
-
-/*
- * char numToAlpha(int i)
- *
- * Converts an integer to a char with 1 = A and 26 = Z
- *
- * i - integer to convert, will be range checked
- * return - character of alphabet corresponding with integer
- *          or '?' if out of range
- */
-char numToAlpha(int i);
+char * decode(Bytef *bitstream, int start,int end);
 
 /*
  * char numToAlpha(int i)

@@ -116,6 +116,8 @@ directory as the Stripe Snoop executable. However, you really should put it
 in the Windows System directory, c:\winnt\system32\, to able able to call
 Stripe Snoop from anywhere.
 
+Example:	./ss -i -1 < samples/sc/track_1
+
 Modes
 =====
 Stripe Snoop now comes with several modes it can be placed in, to make it

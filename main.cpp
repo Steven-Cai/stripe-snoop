@@ -22,6 +22,7 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #ifdef __linux__
 	#include <sys/types.h>
@@ -61,6 +62,8 @@ int main(int argc, char* argv[])
 	ssFlags.TRACK2=true;
 	ssFlags.TRACK3=false;
 	ssFlags.BITSTREAMSIZE=240;
+	ssFlags.BITPERCHAR=5;
+	ssFlags.MAXCHAR=40;
 	ssFlags.PORT=0x201; // default to standard joystick port!
 	ssFlags.LOOP=false;
 
@@ -95,6 +98,8 @@ int main(int argc, char* argv[])
 			ssFlags.ALPHA=true;
 			ssFlags.BCD=false;
 			ssFlags.BITSTREAMSIZE = 640;
+			ssFlags.BITPERCHAR = 7;
+			ssFlags.MAXCHAR=79;
 		}
 		if(strcmp("-2",argv[c-1])==0) {
 			ssFlags.TRACK1=false;
@@ -103,6 +108,8 @@ int main(int argc, char* argv[])
 			ssFlags.BCD=true;
 			ssFlags.ALPHA=false;
 			ssFlags.BITSTREAMSIZE = 240;
+			ssFlags.BITPERCHAR = 5;
+			ssFlags.MAXCHAR=40;
 		}
 		if(strcmp("-3",argv[c-1])==0) {
 			ssFlags.TRACK1=false;
@@ -111,6 +118,8 @@ int main(int argc, char* argv[])
 			ssFlags.BCD=true;
 			ssFlags.ALPHA=false;
 			ssFlags.BITSTREAMSIZE = 600;
+			ssFlags.BITPERCHAR = 5;
+			ssFlags.MAXCHAR=107;
 		}
 		if(strcmp("-S",argv[c-1])==0) {
 			int newSize = atoi(argv[c]);
@@ -175,7 +184,6 @@ int main(int argc, char* argv[])
 		} else {
 			//get bitstream from Interface
 			bitstream = readInterface();
-
 
 		}
 		//---------------------------------------STAGE 2

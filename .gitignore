@@ -1,0 +1,14 @@
+#
+# Normal rules
+#
+*.o
+
+# cscope files
+cscope.*
+ncscope.*
+
+# Applicant
+bitgen
+mod10
+ss
+rdetect

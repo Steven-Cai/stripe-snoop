@@ -2,7 +2,7 @@ CXX=c++
 CXXFLAGS = -O -Wall
 CC=cc
 
-OBJECTS=main.o capture.o parser.o database.o
+OBJECTS=main.o capture.o parser.o database.o rdetect.o
 APPLICATIONS=ss bitgen mod10 rdetect
 
 all: ss bitgen mod10 rdetect
