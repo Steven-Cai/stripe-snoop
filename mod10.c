@@ -52,6 +52,7 @@ int main(int argc, char* argv[])
 	int GEN=0;
 	memset(card,0,50);
 	srand(100);
+	char *check = NULL;
 
 	if(argc >= 2) {
 		if(strcmp(argv[1],"-?")==0) {
@@ -74,10 +75,18 @@ int main(int argc, char* argv[])
 	}
 	if(GEN) {
 		printf("Enter up to %i numbers of an Account Number\n",num-1);
-		fgets(card,num-1,stdin);
+		check = fgets(card,num-1,stdin);
+		if (!check) {
+			printf("No number input\n");
+			return 0;
+		}
 	} else {
 		printf("Enter the Account Number to check\n");
-		fgets(card,50,stdin);
+		check = fgets(card,50,stdin);
+		if (!check) {
+			printf("No number input\n");
+			return 0;
+		}
 	}
 	if(GEN) {
 		/*Fill it up to num digits*/

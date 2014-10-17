@@ -15,7 +15,7 @@ cardType::cardType()
 	untext=NULL;
 }
 
-void cardType::add(char *s, char *t)
+void cardType::add(const char *s, const char *t)
 {
 	//printf("attemping to add \"%s\" and \"%s\"\n", s ,t );
 	char * a = new char[strlen(s)+1];
@@ -28,7 +28,7 @@ void cardType::add(char *s, char *t)
 	numFields++;
 }
 
-void cardType::addUnknowns(char *s)
+void cardType::addUnknowns(const char *s)
 {
 	if(untext != NULL)
 		delete untext;
@@ -37,7 +37,7 @@ void cardType::addUnknowns(char *s)
 	unknowns=true;
 }
 
-void cardType::setName(char *s)
+void cardType::setName(const char *s)
 {
 	if(name != NULL)
 		delete name;
@@ -48,7 +48,7 @@ void cardType::setName(char *s)
 char * cardType::getName(int i)
 {
 	if(i>numFields || i<0)
-		return "ERROR!";
+	    return (char *)"ERROR!";
 	else
 		return names.at(i);
 }
@@ -56,12 +56,12 @@ char * cardType::getName(int i)
 char * cardType::getData(int i)
 {
 	if(i>numFields || i<0)
-		return "ERROR!";
+	    return (char *)"ERROR!";
 	else
 		return data.at(i);
 }
 
-void cardType::setNotes(char *s)
+void cardType::setNotes(const char *s)
 {
 	if(notes != NULL)
 		delete notes;
@@ -74,7 +74,7 @@ The following functions are used in the parser, to extract the
 different fields from the magstripe stream. These will go in a
 different file later on*/
 
-bool isDelim(char ch, char* delim)
+bool isDelim(char ch, const char* delim)
 {
   if (ch == 0) return 1;/*end of string is always delim*/
   while(*delim)
@@ -84,21 +84,21 @@ bool isDelim(char ch, char* delim)
   return false;
 }
 
-int extractFields(char* st, char** subSt, int lth, char* delim)
+int extractFields(char* st, char** subSt, int lth, const char* delim)
 {
 	char* st1 = st;
 	int i = 0;
 	char* start;
-    char found;
+	char found;
 
-	if (*st == 0) return 0; /*Empty string, no substrings*/
+	if (*st1 == 0) return 0; /*Empty string, no substrings*/
 	while(i < lth) {
-		start = st;
+		start = st1;
 		while(1) {
-			if (isDelim(*st, delim)) {
+			if (isDelim(*st1, delim)) {
 				/* Found end of string*/
-				found = *st; /*record the terminating character*/
-				*st++ = 0;   /* Terminate the substring*/
+				found = *st1; /*record the terminating character*/
+				*st1++ = 0;   /* Terminate the substring*/
 
 				subSt[i] = start; /*Start of this substring*/
 				/*are we at the end of the string?*/
@@ -108,7 +108,7 @@ int extractFields(char* st, char** subSt, int lth, char* delim)
 				i++;
 				break;
 			} else {
-				st++; /*next*/
+				st1++; /*next*/
 			}
 		}
 	}
@@ -205,7 +205,7 @@ bool dateValid(char *m, char *d, char * y)
 	char year[5]={0,0,0,0,0};
 	int i;
 
-	bool leap=false;
+	//bool leap=false;
 
 	if(!isMonth(m)) return false;
 	for(i=0;i<2;i++)
@@ -236,7 +236,7 @@ int expandYear(int i)
 
 // =============================================================== FORMATTERS
 
-char * monthName(int x)
+const char * monthName(int x)
 {
 	switch(x)
 	{
@@ -281,9 +281,9 @@ char * monthName(int x)
 	}
 }
 
-char * formatter(char * format, char * n)
+char * formatter(const char * format, char * n)
 {
-	int i=0;
+	unsigned int i=0;
 	int k=0;
 	char * foo = new char[strlen(format)+1];
 	for(i=0;i<strlen(format);i++)
@@ -377,7 +377,6 @@ char * goParseAlpha(Bytef * bitstream)
 {
 	int start, end;
 	Bytef * temp;
-	int i;
 
 	start = findSSAlpha(bitstream);
 	end = findESAlpha(bitstream, start);

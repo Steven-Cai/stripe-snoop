@@ -52,6 +52,7 @@ cardType visa(track2 t2)
 	cardType card;
 	bool flag;
 	memset(tmp2,0,80);
+	char *check = NULL;
 
 	//is 16 or 13 characters
 		if(strlen(t2.fields[0]) !=16 && strlen(t2.fields[0])!=13) return card;
@@ -88,7 +89,11 @@ cardType visa(track2 t2)
 		flag = false;
 		while(!feof(fin))
 		{
-			fgets(tmp2,80,fin);
+			check = fgets(tmp2,80,fin);
+			if (!check) {
+				printf("Error: visa(): fgets error\n");
+				break;
+			}
 			if(strlen(tmp2)>6) {
 				if( strncmp(t2.fields[0],tmp2,4) == 0) {
 					strcpy(tmp, &tmp2[5]);
@@ -120,6 +125,7 @@ cardType mastercard(track2 t2)
 	cardType card;
 	bool flag;
 	memset(tmp2,0,80);
+	char *check = NULL;
 
 	//is 16 characters
 		if(strlen(t2.fields[0]) !=16) return card;
@@ -159,7 +165,11 @@ cardType mastercard(track2 t2)
 		flag = false;
 		while(!feof(fin))
 		{
-			fgets(tmp2,80,fin);
+			check = fgets(tmp2,80,fin);
+			if (!check) {
+				printf("Error: mastercard(): fgets error\n");
+				break;
+			}
 			if(strlen(tmp2)>6) {
 				if( strncmp(t2.fields[0],tmp2,4) == 0) {
 					strcpy(tmp, &tmp2[5]);
@@ -593,6 +603,7 @@ cardType aamva(track2 t2)
 	char tmp2[80];
 	cardType card;
 	memset(tmp2,0,80);
+	char *check;
 
 	//1st is at least 7 characters
 	if(strlen(t2.fields[0]) < 7) return card;
@@ -622,7 +633,11 @@ cardType aamva(track2 t2)
 		bool flag = false;
 		while(!feof(fin))
 		{
-			fgets(tmp2,80,fin);
+			check = fgets(tmp2,80,fin);
+			if (!check) {
+				printf("Error: aamva(): fgets error\n");
+				break;
+			}
 			if(strlen(tmp2)>8) {
 				if( strncmp(t2.fields[0],tmp2,6) == 0) {
 					flag = true;

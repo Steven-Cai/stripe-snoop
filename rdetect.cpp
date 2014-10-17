@@ -88,7 +88,7 @@ void findCardSelect(long * fluxes)
 /*----------------------------------------------------------------------MAIN*/
 int main(int argc, char* argv[])
 {
-	char s[10];
+	//char s[10];
 	time_t t1,t2;
 	int i, k;
 	/* index 0 = Bit 8 = 
@@ -152,7 +152,7 @@ int main(int argc, char* argv[])
 	printf("Processing...\n");
 	printf("Deltas: ");
 	for(i=0;i<5;i++)
-		printf("%d ", fluxes[i]);
+		printf("%ld ", fluxes[i]);
 	printf("\n");
 
 }

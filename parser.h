@@ -34,11 +34,11 @@ typedef std::vector<char *>  stringVec;
 class cardType {
 public:
 	cardType();         // Default constructor
-	void setName(char * s);
-	void setNotes(char *s);
+	void setName(const char * s);
+	void setNotes(const char *s);
 	void setUnknowns(char *s);
-	void addUnknowns(char *s);
-	void add(char * s, char * t);
+	void addUnknowns(const char *s);
+	void add(const char * s, const char * t);
 	char * getName(int i);
 	char * getData(int i);
 
@@ -161,17 +161,17 @@ int expandYear(int i);
 // =============================================================== FORMATTERS
 
 /*
- * char * monthName(int x);
+ * const char * monthName(int x);
  *
  * returns the name of a month, given its number
  *
  * x - number of month (1-12);
  * returns - string of the months name;
  */
-char * monthName(int x);
+const char * monthName(int x);
 
 /*
- * char * formatter(char * format, char * n);
+ * char * formatter(const char * format, char * n);
  *
  * returns a string of numbers that are spaced/divided according to a
  * formatting string provided
@@ -180,7 +180,7 @@ char * monthName(int x);
             (ie "XXX-XX-XXXX" for an SSN);
  * returns - correctly formatted numeric string
  */
-char * formatter(char * format, char * n);
+char * formatter(const char * format, char * n);
 
 //================================================================= parsers
 

@@ -43,6 +43,7 @@ int main(int argc, char* argv[])
 
 	int i,j,c;
 	Bytef *bitstream =NULL; //bitstream of the card, contains 1's and 0's
+	char *check = NULL; //return value of fgets
 	char *cardOut=NULL;    //string of ASCII characters representing a tracks contents
 
 	cardType result;
@@ -160,7 +161,9 @@ int main(int argc, char* argv[])
 			}
 			memset(bitstream,0,ssFlags.BITSTREAMSIZE);
 			//here and only here will bitstream be ASCII 1's and 0's
-			fgets((char *)bitstream,ssFlags.BITSTREAMSIZE,stdin);
+			check = fgets((char *)bitstream,ssFlags.BITSTREAMSIZE,stdin);
+			if (!check)
+				printf("Error: main(): get input stream error\n");
 			//map to 1 and 0
 			for(c=0;c<ssFlags.BITSTREAMSIZE;c++)
 				if(c>0) bitstream[c]=bitstream[c]- 48;
@@ -178,7 +181,9 @@ int main(int argc, char* argv[])
 			memset(bitstream,0,120);
 			//here and only here bitstream contains the ASCII characters from the
 			//cherry keyboard.
-			fgets((char *)bitstream,120,stdin);
+			check = fgets((char *)bitstream,120,stdin);
+			if (!check)
+				printf("Error: main(): get cherry stream error\n");
 			bitstream[strlen((char *)bitstream)-1]='\0'; //remove trailing CR
 			cardOut= handleCherry((char *)bitstream);
 		} else {
