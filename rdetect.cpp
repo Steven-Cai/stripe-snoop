@@ -28,6 +28,12 @@ ss_flags_t ssFlags;
  #define Inp32 inb
 #endif
 
+// necessary I/O for an OS X build
+#ifdef __APPLE__
+ #include <architecture/i386/pio.h>
+ #define Inp32 inb
+#endif
+
 Reader theReader;
 
 bool validBCD(Bytef * bitstream)
